@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maior Valor</title>
+<style>
+    body {
+        background-color: aquamarine;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    main {
+        background-color: rgb(233, 133, 233);
+        width: 300px;
+        padding: 10px;
+        border-radius: 11px;
+        margin: auto;
+    }
+    h1 {
+        text-align: center;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-style: oblique;
+    }
+    div {
+        text-align: center;
+        
+    }
+</style>
+</head>
+<body>
+    <main>
+        <h1> Maior Valor</h1>
+        <form action="salvar.php" method="get" onsubmit="return verifica()">
+            <label for="v1">Valor 1:</label>
+            <input type="number" name="v1" id="v1" min="0" max="1000">
+
+            <br><label for="v2">Valor 2:</label>
+            <input type="number" name="v2" id="v2" min="0" max="1000">
+
+            <div><br><input type="submit" value="Verificar"></div>
+        </form>
+        <p id="res">Resultado final</p>
+    </main>
+    <script>
+        function verifica() {
+            let n1 = Number(document.getElementById("v1").value)
+            let n2 = Number(document.getElementById("v2").value)
+
+            let final = document.getElementById("res")
+            if (n1 > n2) {
+                final.innerHTML = `${n1} é maior`
+            } else if (n2 > n1) {
+                final.innerHTML = `${n2} é maior`
+            } else if (n2==n1) {
+                final.innerHTML = `${n1} e ${n2} são iguais`
+            }
+
+            return false
+        }
+    </script>
+</body>
+</html>
